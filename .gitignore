@@ -1,36 +1,61 @@
 # ========================
-# .NET / Visual Studio
+# .NET (ASP.NET Core)
 # ========================
-.vs/
 bin/
 obj/
+.vs/
 *.user
 *.suo
 *.db
 
+# Environment configs
+appsettings.Development.json
+appsettings.Production.json
+.env
+
 # ========================
 # Angular / Node
 # ========================
-node_modules/
 dist/
 tmp/
 out-tsc/
-.angular/
+bazel-out/
+node_modules/
+.angular/cache
 coverage/
 npm-debug.log
 yarn-error.log
 
 # ========================
-# IDEs
+# IDEs & Editors
 # ========================
-.vscode/
 .idea/
 .project
 .classpath
+.c9/
 .settings/
+*.launch
+*.sublime-workspace
+
+# VS Code (keep workspace settings)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
 
 # ========================
-# OS
+# Misc
+# ========================
+.sass-cache/
+connect.lock
+libpeerconnection.log
+testem.log
+typings/
+
+# ========================
+# System
 # ========================
 .DS_Store
 Thumbs.db
