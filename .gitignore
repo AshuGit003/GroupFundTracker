@@ -1,0 +1,36 @@
+# ========================
+# .NET / Visual Studio
+# ========================
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.db
+
+# ========================
+# Angular / Node
+# ========================
+node_modules/
+dist/
+tmp/
+out-tsc/
+.angular/
+coverage/
+npm-debug.log
+yarn-error.log
+
+# ========================
+# IDEs
+# ========================
+.vscode/
+.idea/
+.project
+.classpath
+.settings/
+
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
