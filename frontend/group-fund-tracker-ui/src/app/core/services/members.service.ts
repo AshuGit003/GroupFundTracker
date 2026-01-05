@@ -20,4 +20,8 @@ export class MembersService {
   getMembers() {
     return this.http.get<Member[]>(this.baseUrl);
   }
+
+  addMember(member: Partial<Member>) {debugger
+    return this.http.post<Member>(this.baseUrl, member);
+  }
 }
