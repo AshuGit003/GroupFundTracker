@@ -1,0 +1,42 @@
+<div class="card shadow-sm">
+  <div class="card-header bg-primary text-white">Add Member</div>
+
+  <div class="card-body">
+
+    <ngb-alert *ngIf="successMessage"
+    type="success"
+    [dismissible]="true">{{successMessage}}
+    </ngb-alert>
+
+    <ngb-alert *ngIf="errorMessage"
+    type="danger"
+    [dismissible]="true">{{errorMessage }}
+    </ngb-alert>
+
+    <form (ngSubmit)="addMember()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" 
+            class="form-control" 
+            [(ngModel)]="name" 
+            name="name"
+            placeholder="Enter Member Name"
+            required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Role</label>
+            <select
+                class="form-select"
+                [(ngModel)]="role"
+                name="role">
+                <option value="Member">Member</option>
+                <option value="Treasurer">Treasurer</option>
+                <option value="DecisionMaker">Decision Maker</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary w-100" type="submit">Add Member</button>
+    </form>
+  </div>
+</div>
