@@ -21,7 +21,7 @@ export class MembersService {
     return this.http.get<Member[]>(this.baseUrl);
   }
 
-  addMember(member: Partial<Member>) {debugger
+  addMember(member: Partial<Member>) {
     return this.http.post<Member>(this.baseUrl, member);
   }
 }
