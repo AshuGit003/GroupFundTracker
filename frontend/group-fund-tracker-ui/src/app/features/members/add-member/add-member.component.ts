@@ -23,7 +23,7 @@ export class AddMemberComponent {
 
   constructor(private membersService: MembersService) {}
 
-  addMember() { debugger
+  addMember() {
     this.successMessage = '';
     this.errorMessage = '';
 
