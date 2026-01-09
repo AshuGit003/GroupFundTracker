@@ -13,8 +13,7 @@ export interface Member {
   providedIn: 'root'
 })
 export class MembersService {
-  private baseUrl = `${environment.apiBaseUrl}/members`;
-
+  private baseUrl =  environment.apiBaseUrl;
   constructor(private http: HttpClient) { }
 
   getMembers() {
