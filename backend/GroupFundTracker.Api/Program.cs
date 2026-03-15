@@ -50,6 +50,12 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<GroupFundDbContext>();
+    db.Database.Migrate();
+}
+
 app.MapFallbackToFile("index.html");
 
 app.Run();
