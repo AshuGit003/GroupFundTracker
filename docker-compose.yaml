@@ -1,0 +1,22 @@
+services:
+
+  api:
+    build:
+      context: backend/GroupFundTracker.Api
+      dockerfile: Dockerfile
+    container_name: groupfundtracker-api
+    ports:
+      - "5000:8080"
+    depends_on:
+      - sqlserver
+    environment:
+      ConnectionStrings__DefaultConnection: "Server=sqlserver;Database=GroupFundTrackerDb;User=sa;Password=AshishDbsa1;TrustServerCertificate=True"
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: groupfundtracker-db
+    environment:
+      SA_PASSWORD: "AshishDbsa1"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
