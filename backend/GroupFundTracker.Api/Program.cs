@@ -56,6 +56,13 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
-app.MapFallbackToFile("index.html");
+app.MapWhen(context => !context.Request.Path.StartsWithSegments("/api"), appBuilder =>
+{
+    appBuilder.UseRouting();
+    appBuilder.UseEndpoints(endpoints =>
+    {
+        endpoints.MapFallbackToFile("index.html");
+    });
+});
 
 app.Run();
